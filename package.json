@@ -14,6 +14,7 @@
     "data-draw": "pandoc --from markdown-auto_identifiers source/data/data-draw.md -o ./build/data/data-draw.html",
     "data-simple": "pandoc --from markdown-auto_identifiers source/data/data-simple.md -o ./build/data/data-simple.html",
     "data-missing": "pandoc --from markdown-auto_identifiers source/data/data-missing.md -o ./build/data/data-missing.html",
+    "data-watch": "npm-watch",
     "demo": "npm run demo-draw && npm run demo-simple && npm run demo-missing",
     "demo-draw": "npx mustache -p source/themes/demo/draw/draw-front.mustache -p source/themes/demo/draw/draw-reverse.mustache source/themes/demo/draw/draw.json source/themes/demo/draw/draw.mustache > build/demo/draw.html",
     "demo-simple": "npx mustache -p source/themes/demo/simple/simple-front.mustache -p source/themes/demo/simple/simple-reverse.mustache source/themes/demo/simple/simple.json source/themes/demo/simple/simple.mustache > build/demo/simple.html",
@@ -32,6 +33,14 @@
   "devDependencies": {
     "less": "^4.2.0",
     "mustache": "^4.2.0",
+    "npm-watch": "^0.13.0",
     "print-first-css": "github:badlydrawnrob/print-first-css#d2f15c2"
-  }
+  },
+    "watch": {
+      "data": {
+        "patterns": ["source/data"],
+        "extensions": "md",
+        "quiet": false
+      }
+    }
 }
